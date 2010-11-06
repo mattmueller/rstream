@@ -1,20 +1,22 @@
 class TwitterStatus < Activity
 
+  validates_presence_of :source_url
+
   def self.authorize_access
     Twitter::Client.new('hidden')
   end
 
   def self.get_historic_statuses
     client = TwitterStatus.authorize_access
-    @max_id = TwitterStatus.first(:order => 'created_at asc').metadata['status_id']
-    if @max_id.nil?
+    @min_id = TwitterStatus.first(:order => 'created_at asc').metadata['status_id']
+    if @min_id.nil?
       statuses = client.user_timeline('matt_mueller', :count => 200, :include_rts => 1) rescue nil
       if statuses.nil?
         sleep(60)
         statuses = client.user_timeline('matt_mueller', :count => 200, :include_rts => 1) rescue nil
       end
     else
-      statuses = client.user_timeline('matt_mueller', :count => 200, :max_id => @max_id, :include_rts => 1) rescue nil
+      statuses = client.user_timeline('matt_mueller', :count => 200, :max_id => @min_id, :include_rts => 1) rescue nil
       if statuses.nil?
         sleep(60)
         statuses = client.user_timeline('matt_mueller', :count => 200, :include_rts => 1) rescue nil
