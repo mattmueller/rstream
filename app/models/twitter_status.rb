@@ -1,0 +1,3 @@
+class TwitterStatus < Activity
+  
+end

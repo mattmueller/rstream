@@ -1,0 +1,3 @@
+class RssItem < Activity
+  
+end

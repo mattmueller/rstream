@@ -22,4 +22,6 @@ ActiveRecord::Schema.define(:version => 20101106124500) do
     t.datetime "updated_at"
   end
 
+  add_index "activities", ["type"], :name => "index_activities_on_type"
+
 end

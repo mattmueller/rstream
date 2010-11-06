@@ -9,6 +9,9 @@ class CreateActivities < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :activities, :type
+
   end
 
   def self.down
