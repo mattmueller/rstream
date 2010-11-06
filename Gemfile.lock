@@ -96,6 +96,7 @@ GEM
       multi_xml (~> 0.2.0)
       simple_oauth (~> 0.1.1)
     tzinfo (0.3.23)
+    www-delicious (0.4.0)
 
 PLATFORMS
   ruby
@@ -108,3 +109,4 @@ DEPENDENCIES
   oauth (>= 0.4.4)
   rails (= 3.0.0)
   twitter (= 1.0.0.rc.6)
+  www-delicious (>= 0.4.0)
