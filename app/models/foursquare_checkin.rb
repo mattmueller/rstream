@@ -38,7 +38,6 @@ class FoursquareCheckin < Activity
           FoursquareCheckin.log_activity(checkin)
         end
       end
-      FoursquareCheckin.get_historic_checkins
     end
   end
 

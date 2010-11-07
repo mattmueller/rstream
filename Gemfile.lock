@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/Agiley/flickr.git
+  revision: bae7338938cd2d5206817623cfe7b0d97db73594
+  branch: master
+  specs:
+    agiley-flickr (1.0.14)
+      xml-simple (>= 1.0.12)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -97,11 +105,13 @@ GEM
       simple_oauth (~> 0.1.1)
     tzinfo (0.3.23)
     www-delicious (0.4.0)
+    xml-simple (1.0.12)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  agiley-flickr!
   compass (>= 0.10.6)
   foursquare (>= 0.3.4)
   haml (>= 3.0.23)

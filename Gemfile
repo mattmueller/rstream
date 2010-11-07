@@ -9,3 +9,4 @@ gem "twitter", "= 1.0.0.rc.6"
 gem "oauth", ">= 0.4.4"
 gem "foursquare", ">= 0.3.4"
 gem "www-delicious", ">= 0.4.0"
+gem 'agiley-flickr', :git => 'git://github.com/Agiley/flickr.git', :branch => 'master', :require => 'flickr'
