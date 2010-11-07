@@ -115,6 +115,7 @@ DEPENDENCIES
   compass (>= 0.10.6)
   foursquare (>= 0.3.4)
   haml (>= 3.0.23)
+  httparty (>= 0.6.1)
   mysql (= 2.8.1)
   oauth (>= 0.4.4)
   rails (= 3.0.0)
