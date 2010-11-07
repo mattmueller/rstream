@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101106144602) do
+ActiveRecord::Schema.define(:version => 20101107122105) do
 
   create_table "activities", :force => true do |t|
     t.string   "type"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(:version => 20101106144602) do
     t.string   "source_url"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "external_id", :limit => 8
+    t.string   "external_id"
   end
 
   add_index "activities", ["type"], :name => "index_activities_on_type"
