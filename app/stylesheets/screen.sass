@@ -1,7 +1,88 @@
-/*
-  Welcome to Compass.
-  In this file you should write your main styles. (or centralize your imports)
-  Import this file using the following HTML or equivalent:
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
-
 @import compass/reset
+@import compass/utilities
+@import compass/css3
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold&subset=latin)
+
++font-face("ChunkFive", font-files("/Chunkfive.otf", opentype))
+
+body
+  background: #BBB897
+  color: #222
+  font-family: Arial
+  font-size: 13px
+
+#wrap
+  width: 980px
+  margin: 0px auto
+  position: relative
+  #sidebar
+    width: 296px
+    position: absolute
+    top: 50px
+    left: 0px
+    .logo_container
+      background: #332F25
+      +border-radius(5px 0px 0px 0px)
+      border: 1px solid #332F25
+      padding: 10px
+      +clearfix
+      h1
+        +float-left
+        color: #FFF
+        font-family: "ChunkFive"
+        font-size: 44px
+        span
+          &.small
+            font-size: 24px
+      .about_links
+        +float-right
+        ul
+          margin: 0
+          padding: 0
+          margin-right: 10px
+          li
+            padding: 0
+            margin: 3px 0px
+            text-align: center
+            font-size: 11px
+            a
+              color: #332F25
+              display: block
+              padding: 1px 0px
+              text-decoration: none
+              line-height: 8px
+              img
+                border: none
+            &:hover
+              a
+                color: #FFF
+    .navigation
+      background: #888D78
+      width: 294px
+      +border-radius(0px 0px 0px 5px)
+      border: 1px solid #888D78
+      ul
+        margin: 0px
+        padding: 0px
+        li
+          padding: 10px 10px
+          margin: 0px
+          border-bottom: 1px solid #74776C
+          border-top: 1px solid #98A393
+          font-family: "Droid Sans", arial, serif
+          font-size: 16px
+          color: #FFF
+          &.first
+            border-top: 1px solid #74776C
+          &.last
+            border-bottom: none
+
+            
+  #content
+    +float-right
+    width: 640px
+    padding: 20px
+    background: #FFF
+    border-left: 2px solid #332F25
+    border-right: 2px solid #332F25
+    height: 600px
