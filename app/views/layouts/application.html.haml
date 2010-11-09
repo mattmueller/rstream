@@ -3,42 +3,58 @@
 
   %head
     %title
-      The Matt Mueller
+      = "#{@page_title} || The Matt Mueller"
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
     = stylesheet_link_tag "compiled/screen"
   %body
     #wrap
       #sidebar
-        .logo_container
-          %h1
-            %span.small
-              The
-            %br
-            Matt
-            %br
-            Mueller
-          .about_links
+        .content
+          .logo_container
+            %h1
+              %span.small
+                The
+              %br
+              Matt
+              %br
+              Mueller
+            .about_links
+              %ul
+                %li
+                  = link_to(image_tag('home-inv.png'), '#')
+                  = link_to 'Home', '#'
+                %li
+                  = link_to(image_tag('about-inv.png'), '#')
+                  = link_to 'About', '#'
+                %li
+                  = link_to(image_tag('mail-inv.png'), '#')
+                  = link_to 'Contact', '#'
+          .navigation
             %ul
               %li
-                = link_to(image_tag('home-inv.png'), '#')
-                = link_to 'Home', '#'
+                %a{:href => "#", :class => 'first', :class => ('active' if @current_tab == 'stream')}
+                  Life Stream
+                  %span.count
+                    = "(#{number_with_delimiter(@stream_count)})"
               %li
-                = link_to(image_tag('about-inv.png'), '#')
-                = link_to 'About', '#'
+                %a{:href => "#", :class => ('active' if @current_tab == 'foursquare')}
+                  Twitter Status Updates
+                  %span.count
+                    = "(#{number_with_delimiter(@twitter_count)})"
               %li
-                = link_to(image_tag('mail-inv.png'), '#')
-                = link_to 'Contact', '#'
-        .navigation
-          %ul
-            %li.first
-              Life Stream
-            %li
-              Twitter Status Updates
-            %li
-              Foursquare Checkins
-            %li
-              Google Reader Shares
-            %li.last
-              Flickr Photos
+                %a{:href => "#", :class => ('active' if @current_tab == 'twitter')}
+                  Foursquare Checkins
+                  %span.count
+                    = "(#{number_with_delimiter(@foursquare_count)})"
+              %li
+                %a{:href => "#", :class => ('active' if @current_tab == 'google_reader')}
+                  Google Reader Shares
+                  %span.count
+                    = "(#{number_with_delimiter(@google_reader_count)})"
+              %li
+                %a{:href => "#", :class => 'last', :class => ('active' if @current_tab == 'flickr')}
+                  Flickr Photos
+                  %span.count
+                    = "(#{number_with_delimiter(@flickr_count)})"
       #content
         = yield

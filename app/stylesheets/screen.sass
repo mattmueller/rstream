@@ -20,42 +20,44 @@ body
     position: absolute
     top: 50px
     left: 0px
-    .logo_container
-      background: #332F25
-      +border-radius(5px 0px 0px 0px)
-      border: 1px solid #332F25
-      padding: 10px
-      +clearfix
-      h1
-        +float-left
-        color: #FFF
-        font-family: "ChunkFive"
-        font-size: 44px
-        span
-          &.small
-            font-size: 24px
-      .about_links
-        +float-right
-        ul
-          margin: 0
-          padding: 0
-          margin-right: 10px
-          li
+    .content
+      position: fixed
+      .logo_container
+        background: #332F25
+        +border-radius(5px 0px 0px 0px)
+        border: 1px solid #332F25
+        padding: 10px
+        +clearfix
+        h1
+          +float-left
+          color: #FFF
+          font-family: "ChunkFive"
+          font-size: 44px
+          span
+            &.small
+              font-size: 24px
+        .about_links
+          +float-right
+          ul
+            margin: 0
             padding: 0
-            margin: 3px 0px
-            text-align: center
-            font-size: 11px
-            a
-              color: #332F25
-              display: block
-              padding: 1px 0px
-              text-decoration: none
-              line-height: 8px
-              img
-                border: none
-            &:hover
+            margin-right: 10px
+            li
+              padding: 0
+              margin: 3px 0px
+              text-align: center
+              font-size: 11px
               a
-                color: #FFF
+                color: #332F25
+                display: block
+                padding: 1px 0px
+                text-decoration: none
+                line-height: 8px
+                img
+                  border: none
+              &:hover
+                a
+                  color: #FFF
     .navigation
       background: #888D78
       width: 294px
@@ -65,24 +67,65 @@ body
         margin: 0px
         padding: 0px
         li
-          padding: 10px 10px
           margin: 0px
-          border-bottom: 1px solid #74776C
-          border-top: 1px solid #98A393
-          font-family: "Droid Sans", arial, serif
-          font-size: 16px
-          color: #FFF
-          &.first
-            border-top: 1px solid #74776C
-          &.last
-            border-bottom: none
+          padding: 0px
+          a
+            display: block
+            padding: 10px 10px
+            margin: 0px
+            border-bottom: 1px solid #74776C
+            border-top: 1px solid #98A393
+            font-family: "Droid Sans", arial, serif
+            font-size: 16px
+            color: #FFF
+            text-decoration: none
+            &.first
+              border-top: 1px solid #74776C
+            &.last
+              border-bottom: none
+            &:hover
+              background: #797D6F
+              border-top: 1px solid #74776C
+            &.active
+              font-weight: bold
+              font-size: 18px
+              line-height: 14px
+              background: #98A393
+              &:hover
+                background: #98A393
+              
+            span.count
+              font-size: 10px
+              vertical-align: middle
 
             
   #content
     +float-right
     width: 640px
-    padding: 20px
+    padding: 13px 20px
     background: #FFF
     border-left: 2px solid #332F25
     border-right: 2px solid #332F25
-    height: 600px
+    h1
+      border-bottom: 1px solid #332F25
+      color: #332F25
+      font-family: "Droid Sans", arial, serif
+      font-size: 36px
+      font-weight: bold
+      letter-spacing: -2px
+      padding-top: 0px
+    .activity
+      display: block
+      margin: 40px 0px 10px 25px
+      padding: 20px
+      +border-radius(5px)
+      border: 1px solid #BBB897
+      position: relative
+      &.twitter
+        border: 1px solid #C0DEED
+        .background_icon
+          position: absolute
+          top: -25px
+          left: -25px
+          width: 64px
+          height: 45px

@@ -1,0 +1,6 @@
+%h1
+  = @page_title = "Life Stream"
+
+- unless @activities.empty?
+  - @activities.each do |activity|
+    = render :partial => "activities/#{activity.class.to_s.underscore}", :locals => {:activity => activity}
