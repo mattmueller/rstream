@@ -2,4 +2,12 @@
   .background_icon
     = link_to image_tag('twitter_icon.png'), 'http://twitter.com/matt_mueller'
   %p
-    = activity.title
+    = twitter_link(activity.title)
+  .meta
+    - if !activity.metadata["in_reply_to_screen_name"].nil? && !activity.metadata["in_reply_to_status_id"].nil?
+      = link_to "Replying to #{activity.metadata['in_reply_to_screen_name']}", "http://twitter.com/#{activity.metadata['in_reply_to_screen_name']}/statuses/#{activity.metadata['in_reply_to_status_id']}"
+      ||
+    - if !activity.metadata["lat"].nil?
+      = link_to "Tweet Location", "http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=#{activity.metadata['lat']},#{activity.metadata['lon']}&sll=#{activity.metadata['lat']},#{activity.metadata['lon']}&sspn=0.01174,0.030599&ie=UTF8&z=16"
+      ||
+    = activity.created_at.localtime.to_formatted_s(:short_date_with_time)
