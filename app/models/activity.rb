@@ -46,5 +46,14 @@ class Activity < ActiveRecord::Base
     end
     return @dates
   end
+
+  def self.build_graph_url(type=nil)
+    if type.nil?
+      @data = Activity.data_for_graph
+    else
+      @data = Activity.data_for_graph(type)
+    end
+    @url = Gchart.sparkline(:data => @data[0], :height => 36, :width => 280, :line_colors => '6F7936')
+  end
           
 end

@@ -3,6 +3,8 @@
     = @page_title = params[:activity_type].underscore.gsub('_',' ').titlecase.pluralize
   - else
     = @page_title = "Life Stream"
+  %span.graph
+    = image_tag(@graph_url)
 
 - unless @activities.empty?
   - @activities.each do |activity|
