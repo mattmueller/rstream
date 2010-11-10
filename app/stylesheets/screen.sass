@@ -115,7 +115,10 @@ strong
     background: #FFF
     border-left: 2px solid #332F25
     border-right: 2px solid #332F25
+    border-bottom: 2px solid #332F25
+    +border-radius(0px 0px 5px 5px)
     color: #332F25
+    min-height: 500px
     a
       color: #6F7936
     h1
@@ -206,3 +209,19 @@ strong
         strong
           font-weight: normal
           display: block
+
+  #footer
+    +float-right
+    width: 640px
+    padding: 13px 20px
+    color: #332F25
+    a
+      color: #332F25
+      font-weight: bold
+    .links
+      +float-left
+      .cluster
+        padding-right: 10px
+        display: inline
+    .source
+      +float-right

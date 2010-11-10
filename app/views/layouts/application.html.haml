@@ -63,3 +63,20 @@
                     = "(#{number_with_delimiter(@flickr_count)})"
       #content
         = yield
+      #footer
+        .links
+          .cluster
+            Built With:
+            = link_to 'Ruby', 'http://ruby-lang.org'
+            |
+            = link_to 'Rails', 'http://rubyonrails.org'
+            |
+            = link_to 'MySQL', 'http://mysql.com'
+          .cluster
+            Deployed With:
+            = link_to 'Apache', 'http://apache.org'
+            |
+            = link_to 'Phusion Passenger', 'http://modrails.com'
+        .source
+          = link_to 'Get the Source', 'https://github.com/mattmueller/mm_lifestream'
+
