@@ -1,0 +1,9 @@
+.activity.flickr
+  .background_icon
+    = link_to image_tag('flickr_icon.png'), 'http://flickr.com/photos/drivelblog'
+  %p
+    %strong= link_to(activity.title, activity.source_url)
+    = link_to(image_tag(activity.metadata["preview_url"]), activity.source_url)
+  .meta
+    = activity.created_at.to_formatted_s(:short_date_with_time)
+  .clear
