@@ -1,0 +1,13 @@
+.activity.foursquare
+  .background_icon
+    = link_to image_tag('foursquare_icon.png'), 'http://foursquare.com/matt_mueller'
+  %p
+    = twitter_link(activity.title)
+    - unless activity.content.blank?
+      %br
+      %em= activity.content
+  .meta
+    - unless activity.metadata["venue_id"].nil?
+      = link_to "Checkin Location", "http://foursquare.com/venue/#{activity.metadata['venue_id']}"
+      ||
+    = activity.created_at.to_s.gsub('0010','2010').gsub('0009','2009').gsub('0011','2011').to_time.localtime.to_formatted_s(:short_date_with_time)
