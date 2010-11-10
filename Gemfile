@@ -12,3 +12,4 @@ gem "www-delicious", ">= 0.4.0"
 gem 'agiley-flickr', :git => 'git://github.com/Agiley/flickr.git', :branch => 'master', :require => 'flickr'
 gem "httparty", ">= 0.6.1"
 gem "twitter-text", ">= 1.2.4"
+gem "googlecharts", ">= 1.6.0"
