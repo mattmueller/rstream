@@ -32,32 +32,32 @@
           .navigation
             %ul
               %li
-                %a{:href => "#", :class => 'first', :class => ('active' if @current_tab == 'stream')}
+                %a{:href => "/", :class => 'first', :class => ('active' if @current_tab == 'stream')}
                   Life Stream
                   %span.count
                     = "(#{number_with_delimiter(@stream_count)})"
               %li
-                %a{:href => "#", :class => ('active' if @current_tab == 'foursquare')}
+                %a{:href => "?activity_type=TwitterStatus", :class => ('active' if @current_tab == 'twitter_status')}
                   Twitter Status Updates
                   %span.count
                     = "(#{number_with_delimiter(@twitter_count)})"
               %li
-                %a{:href => "#", :class => ('active' if @current_tab == 'twitter')}
+                %a{:href => "?activity_type=FoursquareCheckin", :class => ('active' if @current_tab == 'foursquare_checkin')}
                   Foursquare Checkins
                   %span.count
                     = "(#{number_with_delimiter(@foursquare_count)})"
               %li
-                %a{:href => "#", :class => ('active' if @current_tab == 'delicious')}
+                %a{:href => "?activity_type=DeliciousBookmark", :class => ('active' if @current_tab == 'delicious_bookmark')}
                   Del.icio.us Bookmarks
                   %span.count
                     = "(#{number_with_delimiter(@delicious_count)})"
               %li
-                %a{:href => "#", :class => ('active' if @current_tab == 'google_reader')}
+                %a{:href => "?activity_type=GoogleReaderShare", :class => ('active' if @current_tab == 'google_reader_share')}
                   Google Reader Shares
                   %span.count
                     = "(#{number_with_delimiter(@google_reader_count)})"
               %li
-                %a{:href => "#", :class => 'last', :class => ('active' if @current_tab == 'flickr')}
+                %a{:href => "?activity_type=FlickrPhoto", :class => 'last', :class => ('active' if @current_tab == 'flickr_photo')}
                   Flickr Photos
                   %span.count
                     = "(#{number_with_delimiter(@flickr_count)})"
