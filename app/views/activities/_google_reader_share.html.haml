@@ -11,5 +11,9 @@
       %em
         = link_to "Continue Reading...", activity.source_url
   .meta
+    - unless activity.metadata["categories"].nil? || activity.metadata["categories"].empty?
+      Tagged:
+      = activity.metadata["categories"].join(', ')
+      ||
     = activity.created_at.to_formatted_s(:short_date_with_time)
   .clear

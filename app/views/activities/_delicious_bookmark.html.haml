@@ -1,0 +1,11 @@
+.activity.delicious
+  .background_icon
+    = link_to image_tag('delicious_icon.png'), 'http://delicious.com/muellermr'
+  %p
+    %strong= link_to activity.title, activity.source_url
+  .meta
+    - unless activity.metadata["tags"].nil? || activity.metadata["tags"].empty?
+      Tagged:
+      = activity.metadata["tags"].join(', ')
+      ||
+    = activity.created_at.to_formatted_s(:short_date_with_time)
