@@ -9,5 +9,6 @@ class ApplicationController < ActionController::Base
     @foursquare_count = FoursquareCheckin.count
     @google_reader_count = GoogleReaderShare.count
     @flickr_count = FlickrPhoto.count
+    @delicious_count = DeliciousBookmark.count
   end
 end

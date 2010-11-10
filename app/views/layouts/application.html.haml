@@ -47,6 +47,11 @@
                   %span.count
                     = "(#{number_with_delimiter(@foursquare_count)})"
               %li
+                %a{:href => "#", :class => ('active' if @current_tab == 'delicious')}
+                  Del.icio.us Bookmarks
+                  %span.count
+                    = "(#{number_with_delimiter(@delicious_count)})"
+              %li
                 %a{:href => "#", :class => ('active' if @current_tab == 'google_reader')}
                   Google Reader Shares
                   %span.count
