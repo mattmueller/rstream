@@ -1,0 +1,15 @@
+.activity.google_reader_share
+  .background_icon
+    = link_to image_tag('google_reader_icon.png'), 'http://www.google.com/reader/shared/MuellerMR'
+  %p
+    %strong= link_to(activity.title, activity.source_url)
+  - unless activity.content.blank?
+    %p
+      = raw(truncate(activity.content, :length => 500))
+      %br
+      %br
+      %em
+        = link_to "Continue Reading...", activity.source_url
+  .meta
+    = activity.created_at.to_s.gsub('0010','2010').gsub('0009','2009').gsub('0011','2011').to_time.localtime.to_formatted_s(:short_date_with_time)
+  .clear
