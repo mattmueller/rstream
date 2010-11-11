@@ -107,6 +107,7 @@ GEM
     twitter-text (1.2.4)
       actionpack
     tzinfo (0.3.23)
+    will_paginate (2.3.15)
     www-delicious (0.4.0)
     xml-simple (1.0.12)
 
@@ -125,4 +126,5 @@ DEPENDENCIES
   rails (= 3.0.0)
   twitter (= 1.0.0.rc.6)
   twitter-text (>= 1.2.4)
+  will_paginate (>= 2.3.15)
   www-delicious (>= 0.4.0)

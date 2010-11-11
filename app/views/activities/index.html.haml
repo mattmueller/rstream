@@ -9,3 +9,4 @@
 - unless @activities.empty?
   - @activities.each do |activity|
     = render :partial => "activities/#{activity.class.to_s.underscore}", :locals => {:activity => activity}
+  = will_paginate(@activities)

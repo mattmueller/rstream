@@ -13,3 +13,4 @@ gem 'agiley-flickr', :git => 'git://github.com/Agiley/flickr.git', :branch => 'm
 gem "httparty", ">= 0.6.1"
 gem "twitter-text", ">= 1.2.4"
 gem "googlecharts", ">= 1.6.0"
+gem "will_paginate", ">= 2.3.15"
