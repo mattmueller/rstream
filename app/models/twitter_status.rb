@@ -8,7 +8,7 @@ class TwitterStatus < Activity
 
   def self.get_historic_statuses
     client = TwitterStatus.authorize_access
-    @min_id = TwitterStatus.first(:order => 'created_at asc').metadata['status_id']
+    @min_id = TwitterStatus.first(:order => 'created_at asc').metadata['status_id'] rescue nil
     if @min_id.nil?
       statuses = client.user_timeline('matt_mueller', :count => 200, :include_rts => 1) rescue nil
       if statuses.nil?
