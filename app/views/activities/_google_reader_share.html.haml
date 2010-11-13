@@ -1,6 +1,6 @@
 .activity.google_reader_share
   .background_icon
-    = link_to image_tag('google_reader_icon.png'), "http://www.google.com/reader/shared/#{GOOGLE_READER_ID}"
+    = link_to image_tag('google_reader_icon.png'), "http://www.google.com/reader/shared/#{Settings.accounts.google_reader.account_name}"
   %p
     %strong= link_to(activity.title, activity.source_url)
   - unless activity.content.blank?

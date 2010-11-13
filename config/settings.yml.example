@@ -1,0 +1,38 @@
+#To use html content wrap it like this: <%= "my <p>html content</p>" %>
+
+defaults: &defaults
+  site_title:
+  logo_content:
+  accounts:
+    delicious:
+      username:
+      password:
+    flickr:
+      api_key:
+      user_email:
+      username:
+    foursquare:
+      user_id:
+      oauth_key:
+      oauth_secret:
+      access_token:
+      access_secret:
+    google_reader:
+      account_name:
+      user_id:
+    twitter:
+      username:
+      oauth_token:
+      oauth_token_secret:
+      consumer_secret:
+      consumer_key:
+  contact_title:
+  contact_content:
+  about_title:
+  about_content:
+
+development:
+  <<: *defaults
+
+production:
+  <<: *defaults

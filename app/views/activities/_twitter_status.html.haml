@@ -1,6 +1,6 @@
 .activity.twitter
   .background_icon
-    = link_to image_tag('twitter_icon.png'), "http://twitter.com/#{TWITTER_USERNAME}"
+    = link_to image_tag('twitter_icon.png'), "http://twitter.com/#{Settings.accounts.twitter.username}"
   %p
     = twitter_link(activity.title)
   .meta

@@ -1,6 +1,6 @@
 .activity.foursquare
   .background_icon
-    = link_to image_tag('foursquare_icon.png'), "http://foursquare.com/user/#{FOURSQUARE_ID}"
+    = link_to image_tag('foursquare_icon.png'), "http://foursquare.com/user/#{Settings.accounts.foursquare.user_id}"
   %p
     = twitter_link(activity.title)
     - unless activity.content.blank?

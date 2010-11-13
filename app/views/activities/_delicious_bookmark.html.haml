@@ -1,6 +1,6 @@
 .activity.delicious
   .background_icon
-    = link_to image_tag('delicious_icon.png'), "http://delicious.com/#{DELICIOUS_USERNAME}"
+    = link_to image_tag('delicious_icon.png'), "http://delicious.com/#{Settings.accounts.delicious.username}"
   %p
     %strong= link_to activity.title, activity.source_url
   .meta

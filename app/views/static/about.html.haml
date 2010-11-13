@@ -1,32 +1,6 @@
 %h1
-  = @page_title = "About Matt Mueller"
+  = @page_title = "#{Settings.about_title}"
 
 #about
-  = image_tag 'matt_mueller.jpg'
-  %p
-    I'm Matt Mueller.  The one in the photo.  Not the girl, that's my awesome girlfriend
-    = raw("#{link_to('@rachelkoeppel', 'http://twitter.com/rachelkoeppel')}.")
-  %p
-    I grew up in Texas, lived the normal suburban-kid life: sports, music lessons, any activity that I would tolerate.  Oh yeah, and I built a few wrestling websites with my friends (yes, like fake wrestling) back when the internet was a very different place than it is today. When I was 15 we moved to Fernandina Beach, Florida - a nice small town on Amelia Island.  There I started narrowing my interests, and found myself with a bit of an obsession with the band Weezer.  Still my favorite band.
-  %p
-    After graduating high school I went off to
-    = raw("#{link_to 'Hendrix College', 'http://hendrix.edu'},")
-    an amazing little school situated in the unlikely state of Arkansas.  There I majored in Philosophy and International Relations, spent a year abroad in Malaga, Spain, and rekindled my interest in the web.  I began experimenting early on with the new wave of "Web 2.0" sites, and started to try and expand my knowledge of design and development.
-  %p
-    In 2007 it looked like I was headed for graduate school when all of a sudden a startup I had been helping out with -
-    = link_to 'change:healthcare', 'http://changehelathcare.com'
-    = "-"
-    got funded and turned into a "real business."  Ever since then I've been helping lead the development team, gradually expanding my own knowledge in the process...and now calling Nashville, TN home.  It's a great place.
-  %p
-    Recently I've taken a big interest in web development using
-    = raw("#{link_to 'Ruby', 'http://ruby-lang.org'},")
-    = raw("#{link_to 'Rails', 'http://rubyonrails.org'},")
-    and any API I can get my hands on.  Along with a few other great people I've helped found
-    = raw("#{link_to 'CarlSays', 'http://carlsays.com'},")
-    an awesome service that brings local merchants and consumers together by delivering special deals based on a user's checkins on Foursquare, Gowalla, etc.
-  %p
-    And that's about it.  Oh yeah, I like baking too....especially bagels.  I'm always interested in hearing about new ideas and projects, so feel free to
-    = link_to "drop me a line", "/contact"
-    if you want to talk.
-    
+  = raw(Settings.about_content)
     

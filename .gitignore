@@ -5,3 +5,4 @@ tmp/**/*
 config/database.yml
 config/application.rb.local
 public/stylesheets/compiled
+config/settings.yml
