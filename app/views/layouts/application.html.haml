@@ -9,58 +9,7 @@
   %body
     #wrap
       #sidebar
-        .content
-          .logo_container
-            %h1
-              %span.small
-                The
-              %br
-              Matt
-              %br
-              Mueller
-            .about_links
-              %ul
-                %li
-                  = link_to(image_tag('home-inv.png'), '/')
-                  = link_to 'Home', '/'
-                %li
-                  = link_to(image_tag('about-inv.png'), '/about')
-                  = link_to 'About', '/about'
-                %li
-                  = link_to(image_tag('mail-inv.png'), '/contact')
-                  = link_to 'Contact', '/contact'
-          .navigation
-            %ul
-              %li
-                %a{:href => "/", :class => 'first', :class => ('active' if @current_tab == 'stream')}
-                  Life Stream
-                  %span.count
-                    = "(#{number_with_delimiter(@stream_count)})"
-              %li
-                %a{:href => "?activity_type=TwitterStatus", :class => ('active' if @current_tab == 'twitter_status')}
-                  Twitter Status Updates
-                  %span.count
-                    = "(#{number_with_delimiter(@twitter_count)})"
-              %li
-                %a{:href => "?activity_type=FoursquareCheckin", :class => ('active' if @current_tab == 'foursquare_checkin')}
-                  Foursquare Checkins
-                  %span.count
-                    = "(#{number_with_delimiter(@foursquare_count)})"
-              %li
-                %a{:href => "?activity_type=DeliciousBookmark", :class => ('active' if @current_tab == 'delicious_bookmark')}
-                  Del.icio.us Bookmarks
-                  %span.count
-                    = "(#{number_with_delimiter(@delicious_count)})"
-              %li
-                %a{:href => "?activity_type=GoogleReaderShare", :class => ('active' if @current_tab == 'google_reader_share')}
-                  Google Reader Shares
-                  %span.count
-                    = "(#{number_with_delimiter(@google_reader_count)})"
-              %li
-                %a{:href => "?activity_type=FlickrPhoto", :class => 'last', :class => ('active' if @current_tab == 'flickr_photo')}
-                  Flickr Photos
-                  %span.count
-                    = "(#{number_with_delimiter(@flickr_count)})"
+        = render :partial => 'layouts/sidebar'
       #content
         = yield
       #footer
