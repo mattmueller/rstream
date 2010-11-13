@@ -8,3 +8,8 @@ FOURSQUARE_ID = ""
 GOOGLE_READER_ID = ""
 TWITTER_USERNAME = ""
 
+
+#This constant determines the logo text used in the sidebar (html accepted)
+
+LOGO_TEXT = ""
+
