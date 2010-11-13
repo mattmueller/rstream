@@ -28,5 +28,9 @@ class DeliciousBookmark < Activity
   def self.log_activity(bookmark)
     DeliciousBookmark.create(:created_at => bookmark.time.utc, :title => bookmark.title, :source_url => bookmark.url.to_s, :metadata => { "tags" => bookmark.tags, "notes" => bookmark.notes })
   end
+
+  def icon
+    "delicious_icon.png"
+  end
   
 end

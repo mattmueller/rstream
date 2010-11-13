@@ -45,4 +45,8 @@ class FoursquareCheckin < Activity
     FoursquareCheckin.create(:external_id => checkin['id'], :created_at => Time.parse(checkin.created).utc, :title => checkin['display'], :content => checkin.shout, :metadata => { "venue_name" => checkin.venue.name, "venue_id" => checkin.venue['id'], "lat" => checkin.venue.geolat, "lon" => checkin.venue.geolong })
   end
 
+  def icon
+    "foursquare_icon.png"
+  end
+
 end

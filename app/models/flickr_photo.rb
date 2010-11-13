@@ -46,4 +46,8 @@ class FlickrPhoto < Activity
     FlickrPhoto.create(:external_id => photo['id'], :created_at => Time.at(photo['dates']['posted'].to_i), :title => photo['title'], :source_url => photo.url, :content => photo['description'].to_s, :metadata => { "photo_taken" => photo['dates']['taken'].to_time.utc, "tags" => (photo.tags['tag'].collect{ |t| t['content'] } rescue nil), "lat" => (photo['latitude'] if !photo['latitude'] == '0'), "lon" => (photo['longitude'] if !photo['longitude'] == '0'), "preview_url" => "http://farm#{photo['farm']}.static.flickr.com/#{photo['server']}/#{photo['id']}_#{photo['secret']}.#{photo['originalformat']}" })
   end
 
+  def icon
+    "flickr_icon.png"
+  end
+
 end

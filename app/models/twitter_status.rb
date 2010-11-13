@@ -53,4 +53,8 @@ class TwitterStatus < Activity
     TwitterStatus.create(:external_id => status['id'], :created_at => status.created_at.to_time.utc, :title => status.text, :metadata => { "lat" => (status.coordinates.coordinates[1] rescue nil), "lon" => (status.coordinates.coordinates[0] rescue nil), "in_reply_to_screen_name" => status.in_reply_to_screen_name, "in_reply_to_status_id" => status.in_reply_to_status_id, "status_id" => "#{status['id']}" }, :source_url => "http://twitter.com/#{Settings.accounts.twitter.username}/statuses/#{status['id']}")
   end
 
+  def icon
+    "twitter_icon.png"
+  end
+
 end

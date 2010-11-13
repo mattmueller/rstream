@@ -14,6 +14,17 @@ class ActivitiesController < ApplicationController
       format.html
       format.xml { render :xml => @activities }
       format.json { render :json => @activities }
+      format.rss { render :rss => @activities }
+    end
+  end
+
+  def show
+    @activity = Activity.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @activity }
+      format.json { render :json => @activity }
+      format.rss { render :rss => @activity }
     end
   end
 

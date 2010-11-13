@@ -42,5 +42,9 @@ class GoogleReaderShare < Activity
     end
     GoogleReaderShare.create(:external_id => result['id'].gsub('tag:google.com,2005:reader/item/',''), :created_at => Time.parse(result.published), :title => result.title, :content => result.content, :source_url => usable_link, :metadata => { "author" => result.author.name, "categories" => (result.category.collect{|c| c.term} rescue nil) })
   end
+
+  def icon
+    "google_reader_icon.png"
+  end
   
 end
