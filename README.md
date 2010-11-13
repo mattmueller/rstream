@@ -25,35 +25,35 @@ You know how to create an application/get an api key from sites requiring it, au
 
  * Clone rstream and install gems using bundler:
 
-    git clone git@github.com:mattmueller/rstream.git
-    bundle install
+    <pre>git clone git@github.com:mattmueller/rstream.git
+    bundle install</pre>
 
  * Copy config/database.yml.example to config/database.yml - modifying with your database credentials, migrate:
 
-    rake db:migrate
+    <pre>rake db:migrate</pre>
 
  * Copy config/settings.yml.example to config/settings.yml - fill out the various options (leave account credentials blank to ignore it)
 
  * Run historic polling to go back in time and get as much data from services as possible (may take a while) from the console:
 
-    DeliciousBookmark.get_historic_bookmarks
+    <pre>DeliciousBookmark.get_historic_bookmarks
     FlickrPhoto.get_historic_photos
     FoursquareCheckin.get_historic_checkins
     GoogleReaderShare.get_historic_shares
-    TwitterStatus.get_historic_statuses
+    TwitterStatus.get_historic_statuses</pre>
 
  * In your crontab, set entries for the services you want to poll and the intervals at which you want to poll them, in this case they are combined into a single bash file that is invoked every 5 minutes:
 
-    #!/bin/bash
+    <pre>#!/bin/bash
     cd /path/to/app/root
     RAILS_ENV=production script/rails runner "DeliciousBookmark.get_new_bookmarks"
     RAILS_ENV=production script/rails runner "FlickrPhoto.get_new_photos"
     RAILS_ENV=production script/rails runner "FoursquareCheckin.get_new_checkins"
     RAILS_ENV=production script/rails runner "GoogleReaderShare.get_new_shares"
-    RAILS_ENV=production script/rails runner "TwitterStatus.get_new_statuses"
+    RAILS_ENV=production script/rails runner "TwitterStatus.get_new_statuses"</pre>
  
 
-    */5 * * * * sh /path/to/above/script.sh
+    <pre>*/5 * * * * sh /path/to/above/script.sh</pre>
 
  * Deploy: obviously if you want this available on the web you'll need to deploy it.
 
