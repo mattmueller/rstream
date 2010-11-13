@@ -4,7 +4,8 @@
   %head
     %title
       = "#{@page_title} || #{Settings.site_title}"
-    %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
+    %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}
+    = auto_discovery_link_tag(:rss, "#{root_url}feed.rss")
     = stylesheet_link_tag "compiled/screen"
   %body
     #wrap
