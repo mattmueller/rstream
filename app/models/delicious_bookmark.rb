@@ -2,7 +2,7 @@ class DeliciousBookmark < Activity
   require 'www/delicious'
 
   def self.authorize_access
-    d = WWW::Delicious.new('username','password')
+    d = WWW::Delicious.new(Settings.accounts.delicious.username, Settings.accounts.delicious.password)
   end
 
   def self.get_historic_bookmarks

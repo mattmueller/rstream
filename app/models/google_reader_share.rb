@@ -1,7 +1,7 @@
 class GoogleReaderShare < Activity
   
   def self.get_historic_shares
-    response = HTTParty.get("http://www.google.com/reader/public/atom/user/<YOURUSERID>/state/com.google/broadcast?n=5000")
+    response = HTTParty.get("http://www.google.com/reader/public/atom/user/#{Settings.accounts.google_reader.user_id}/state/com.google/broadcast?n=5000")
     results = []
     unless response['feed']['entry'].empty?
       response['feed']['entry'].each do |entry|
@@ -18,7 +18,7 @@ class GoogleReaderShare < Activity
   end
 
   def self.get_new_shares
-    response = HTTParty.get("http://www.google.com/reader/public/atom/user/<YOURUSERID>/state/com.google/broadcast?n=25")
+    response = HTTParty.get("http://www.google.com/reader/public/atom/user/#{Settings.accounts.google_reader.user_id}/state/com.google/broadcast?n=25")
     results = []
     unless response['feed']['entry'].empty?
       response['feed']['entry'].each do |entry|

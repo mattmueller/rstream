@@ -1,8 +1,8 @@
 class FoursquareCheckin < Activity
   
   def self.authorize_access
-    oauth = Foursquare::OAuth.new('appcreds')
-    oauth.authorize_from_access('usercreds')
+    oauth = Foursquare::OAuth.new(Settings.accounts.foursquare.oauth_key, Settings.accounts.foursquare.oauth_secret)
+    oauth.authorize_from_access(Settings.accounts.foursquare.access_token, Settings.accounts.foursquare.access_secret)
     fq = Foursquare::Base.new(oauth)
   end
 

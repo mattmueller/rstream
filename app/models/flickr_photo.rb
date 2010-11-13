@@ -1,8 +1,8 @@
 class FlickrPhoto < Activity
   
   def self.authorize_access
-    client = Flickr::Api.new('your api key')
-    user = client.users('your flickr email')
+    client = Flickr::Api.new(Settings.accounts.flickr.api_key)
+    user = client.users(Settings.accounts.flickr.user_email)
   end
 
   def self.get_historic_photos
