@@ -8,6 +8,7 @@ Tmmnew::Application.routes.draw do
 
   match '/about' => 'static#about'
   match '/contact' => 'static#contact'
+  match '/feed' => 'activities#index'
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)

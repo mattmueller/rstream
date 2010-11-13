@@ -10,6 +10,11 @@ class ActivitiesController < ApplicationController
       @activities = Activity.all(:conditions => ["type = ?", params[:activity_type]], :order => 'created_at desc').paginate(:page => params[:page], :per_page => 50)
       @graph_url = Activity.build_graph_url(params[:activity_type])
     end
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @activities }
+      format.json { render :json => @activities }
+    end
   end
 
 end
