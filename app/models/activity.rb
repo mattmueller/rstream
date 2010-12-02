@@ -29,8 +29,8 @@ class Activity < ActiveRecord::Base
       end
     end
     step = dates.count / 3
-    [0, (step * 2) - 1, (step * 3)].each do |singlestep|
-      @labels << "#{dates[singlestep]}".to_time.to_formatted_s(:short_date)
+    [0, (step * 2) - 1, (step * 3) - 1].each do |singlestep|
+      	@labels << "#{dates[singlestep]}".to_time.to_formatted_s(:short_date)
     end
     @graph_info = [@data, @labels]
   end
