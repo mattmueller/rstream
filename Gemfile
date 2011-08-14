@@ -15,3 +15,4 @@ gem "twitter-text", ">= 1.2.4"
 gem "googlecharts", ">= 1.6.0"
 gem "will_paginate", ">= 2.3.15"
 gem "settingslogic", ">= 2.0.6"
+gem 'flickraw'
