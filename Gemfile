@@ -5,9 +5,9 @@ gem 'mysql', '2.8.1'
 
 gem "compass", ">= 0.10.6"
 gem "haml", ">= 3.0.23"
-gem "twitter", "= 1.0.0.rc.6"
+gem "twitter"
 gem "oauth", ">= 0.4.4"
-gem "foursquare", ">= 0.3.4"
+gem "foursquare2", ">= 1.1.0"
 gem "www-delicious", ">= 0.4.0"
 gem 'agiley-flickr', :git => 'git://github.com/Agiley/flickr.git', :branch => 'master', :require => 'flickr'
 gem "httparty", ">= 0.6.1"

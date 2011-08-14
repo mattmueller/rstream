@@ -36,7 +36,7 @@ class TwitterStatus < Activity
 
   def self.get_new_statuses
     client = TwitterStatus.authorize_access
-    @min_id = TwitterStatus.first(:order => 'created_at desc').external_id
+    @min_id = TwitterStatus.first(:order => 'created_at desc').external_id rescue nil
     if @min_id.nil?
       statuses = client.user_timeline(Settings.accounts.twitter.username, :count => 200, :include_rts => 1)
     else
